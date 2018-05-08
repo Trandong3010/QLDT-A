@@ -118,7 +118,25 @@ namespace DataAccess
             return a.LayDuLieu("LayHH_HoaDon");
         }
 
-        public DataTable ListToDataTable(List<T> data)
+		public DataTable LayMatKhau()
+		{
+			KetNois a = new KetNois();
+			return a.LayDuLieu("layThongTinMatKhau_GetAll");
+		}
+
+		public DataTable XoaTaiKhoan()
+		{
+			KetNois a = new KetNois();
+			return a.LayDuLieu("TaiKhoan_Delete");
+		}
+
+		public DataTable ChucNang()
+		{
+			KetNois a = new KetNois();
+			return a.LayDuLieu("TaiKhoan_GetAll");
+		}
+
+		public DataTable ListToDataTable(List<T> data)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
             PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);

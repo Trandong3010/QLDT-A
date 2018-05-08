@@ -16,8 +16,8 @@ namespace QuanLyBanDienThoai
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FormQLCHBanDT());
-			//Application.Run(new FormDangNhap());
+			//Application.Run(new FormQLCHBanDT());
+			Application.Run(new FormDangNhap());
 			//Application.Run(new FormThongTinSanPham());
 			//Application.Run(new NguoiDung());
 			//Application.Run(new PhanQuyen());

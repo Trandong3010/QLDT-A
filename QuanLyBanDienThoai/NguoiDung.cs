@@ -74,13 +74,13 @@ namespace QuanLyBanDienThoai
 
 		private void buttonXoa_Click(object sender, EventArgs e)
 		{
-			if (nd.Delete(LayThongTinControl()) > 0 && this.textBoxTenTKND.Text.Length > 0)
-			{
-				MessageBox.Show("Xóa thành công!");
-				HienThiDuLieu();
-			}
-			else
-				MessageBox.Show("Xóa thất bại!");
+			//if (nd.Delete(int.Parse(textBoxTenTKND.Text)) > 0 && this.textBoxTenTKND.Text.Length > 0)
+			//{
+			//	MessageBox.Show("Xóa thành công!");
+			//	HienThiDuLieu();
+			//}
+			//else
+			//	MessageBox.Show("Xóa thất bại!");
 		}
 
 		private void TimTheoTenTaiKhoan()
