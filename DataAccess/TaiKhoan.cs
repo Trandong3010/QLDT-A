@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core;
+using System.Security.Cryptography;
 
 namespace DataAccess
 {
@@ -11,11 +13,19 @@ namespace DataAccess
     {
 		public string TenTaiKhoan { get; set; }
 		public string MatKhau { get; set; }
-		//string[] name;
-		//object[] value;
+		public string ChucNang { get; set; }
+		public string Quyen { get; set; }
 
 		public TaiKhoan()
 		{ }
+		public TaiKhoan(string tenTK, string matKhau, string chucNang, string quyen)
+		{
+			this.TenTaiKhoan = tenTK;
+			this.MatKhau = matKhau;
+			this.ChucNang = chucNang;
+			this.Quyen = quyen;
+		}
+
 		public TaiKhoan(string tenTK, string matKhau)
 		{
 			this.TenTaiKhoan = tenTK;
@@ -27,5 +37,6 @@ namespace DataAccess
 		{
 			return tk.DangNhap(TK, MK);
 		}
+
 	}
 }

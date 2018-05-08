@@ -14,7 +14,7 @@ namespace DataAccess
 		SqlConnection conn;
 		private void KetNoi()
 		{
-            conn = new SqlConnection(@"Server=DESKTOP-75UITL3\SQLEXPRESS;Initial Catalog=QLCuaHangDienThoai;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=DESKTOP-75UITL3\SQLEXPRESS;Initial Catalog=QLCuaHangDienThoai;Integrated Security=True");
 			conn.Open();
 		}
 

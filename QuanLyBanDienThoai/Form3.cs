@@ -17,51 +17,61 @@ namespace QuanLyBanDienThoai
 		public FormDangNhap()
 		{
 			InitializeComponent();
+			textBoxMatKhau.PasswordChar = '*';
 		}
 
-		public static string TenTaiKhoan = "";
+		public static string TenTaiKhoan;
 
-		public string MaHoa(string key, string toEncrypt)//thêm mã hóa vào, ko cần giải mã
-		{
-			byte[] keyArray;
-			byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
-			MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-			keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-			TripleDESCryptoServiceProvider tdes =
-			new TripleDESCryptoServiceProvider();
-			tdes.Key = keyArray;
-			tdes.Mode = CipherMode.ECB;
-			tdes.Padding = PaddingMode.PKCS7;
-			ICryptoTransform cTransform = tdes.CreateEncryptor();
-			byte[] resultArray = cTransform.TransformFinalBlock(
-				toEncryptArray, 0, toEncryptArray.Length);
-			return Convert.ToBase64String(resultArray, 0, resultArray.Length);
-		}
+		//public string MaHoa(string toEncrypt)//thêm mã hóa vào, ko cần giải mã
+		//{
+		//	byte[] keyArray;
+		//	byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
+		//	MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+		//	//keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+		//	TripleDESCryptoServiceProvider tdes =
+		//	new TripleDESCryptoServiceProvider();
+		//	//tdes.Key = keyArray;
+		//	tdes.Mode = CipherMode.ECB;
+		//	tdes.Padding = PaddingMode.PKCS7;
+		//	ICryptoTransform cTransform = tdes.CreateEncryptor();
+		//	byte[] resultArray = cTransform.TransformFinalBlock(
+		//		toEncryptArray, 0, toEncryptArray.Length);
+		//	return Convert.ToBase64String(resultArray, 0, resultArray.Length);
+		//}
 
 		TaiKhoan tk = new TaiKhoan();
 
 		private void buttonDangNhap_Click(object sender, EventArgs e)
 		{
-			if(textBoxTenTK.Text.Length == 0 || textBoxMatKhau.Text.Length == 0)
+
+			Login();
+		}
+		private void Login()
+		{
+			FormQLCHBanDT qldt = new FormQLCHBanDT();
+
+			string user = textBoxTenTK.Text;
+			string MK = textBoxMatKhau.Text;
+			if (textBoxTenTK.Text.Length == 0 || textBoxMatKhau.Text.Length == 0)
 			{
 				MessageBox.Show("Bạn chưa nhập tên hoặc mật khẩu");
 			}
 			else
 			{
-				int count = tk.DangNhap(textBoxTenTK.Text, MaHoa("Trandong", textBoxMatKhau.Text)).Rows.Count;
-				int n = tk.DangNhap(textBoxTenTK.Text, textBoxMatKhau.Text).Rows.Count;
-				if (n == 0)
+				int n = tk.DangNhap(user, MK).Rows.Count;
+				if (n!=0)
 				{
-					MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!");
+					//tk.DangNhap(textBoxTenTK.Text, textBoxMatKhau.Text).ToString();
+					//MessageBox.Show("Bạn đã đăng nhập thành công!");
+					this.Hide();
+					qldt.ShowDialog();
+					this.Show();
+					
 				}
 				else
-				{
-					//TenTaiKhoan = tk.DangNhap(textBoxTenTK.Text, MaHoa("Trandong", textBoxMatKhau.Text)).Rows[0][1].ToString();
-					TenTaiKhoan = tk.DangNhap(textBoxTenTK.Text, textBoxMatKhau.Text).Rows[0][1].ToString();
-					MessageBox.Show("Bạn đã đăng nhập thành công!");
-					this.Close();
-				}
+					MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!");
 			}
+
 		}
 
 		private void FormDangNhap_Load(object sender, EventArgs e)
@@ -78,5 +88,19 @@ namespace QuanLyBanDienThoai
 		{
 			if (e.KeyChar == 13) buttonDangNhap_Click(sender, e);
 		}
+
+		private void FormDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if(MessageBox.Show("Bạn có thật sự muốn thoát chương trình?","Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+			{
+				e.Cancel = true;
+			}
+		}
+
+		private void buttonHuy_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+
 	}
 }

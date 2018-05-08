@@ -21,6 +21,7 @@ namespace QuanLyBanDienThoai
 			//Application.Run(new FormThongTinSanPham());
 			//Application.Run(new NguoiDung());
 			//Application.Run(new PhanQuyen());
+			//Application.Run(new ThayDoiMatKhau());
 		}
 	}
 }

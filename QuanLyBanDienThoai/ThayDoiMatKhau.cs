@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using DataAccess;
 
 namespace QuanLyBanDienThoai
 {
@@ -15,7 +16,7 @@ namespace QuanLyBanDienThoai
 		{
 			InitializeComponent();
 		}
-
+		TaiKhoan tk = new TaiKhoan();
 		private void buttonLuu_Click(object sender, EventArgs e)
 		{
 			if (textBoxMatKhauHienTai.Text == "") MessageBox.Show("Bạn chưa nhập mật khẩu hiện tại!");

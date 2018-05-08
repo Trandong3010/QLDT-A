@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangNhap));
 			this.buttonHuy = new System.Windows.Forms.Button();
 			this.buttonDangNhap = new System.Windows.Forms.Button();
 			this.textBoxMatKhau = new System.Windows.Forms.TextBox();
@@ -45,6 +46,7 @@
 			this.buttonHuy.TabIndex = 10;
 			this.buttonHuy.Text = "Hủy bỏ";
 			this.buttonHuy.UseVisualStyleBackColor = true;
+			this.buttonHuy.Click += new System.EventHandler(this.buttonHuy_Click);
 			// 
 			// buttonDangNhap
 			// 
@@ -112,8 +114,10 @@
 			this.Controls.Add(this.textBoxTenTK);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FormDangNhap";
 			this.Text = "Đăng nhập";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDangNhap_FormClosing);
 			this.Load += new System.EventHandler(this.FormDangNhap_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

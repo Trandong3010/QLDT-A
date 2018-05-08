@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using DataAccess;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Security.Cryptography;
+using Core;
 namespace DataAccess
 {
 	public class QLTaiKhoan
@@ -20,7 +21,8 @@ namespace DataAccess
 			value = new object[2];
 			name[0] = "@TenTaiKhoan"; value[0] = TenTK;
 			name[1] = "@MatKhau"; value[1] = MK;
-			return qltt.LayDuLieuCoDieuKien("DangNhap_Select", name, value, 2);
+			return qltt.LayDuLieuCoDieuKien("DangNhap_GetAll", name, value, 2);
+
 		}
 
 	}

@@ -51,6 +51,7 @@
     <Compile Include="Hoadon.cs" />
     <Compile Include="Khachhang.cs" />
     <Compile Include="Loai.cs" />
+    <Compile Include="MaHoa.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="NhapHang.cs" />
     <Compile Include="Phanquyen.cs" />
