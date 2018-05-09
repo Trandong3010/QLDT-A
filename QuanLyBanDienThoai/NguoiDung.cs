@@ -35,8 +35,7 @@ namespace QuanLyBanDienThoai
 			{
 				textBoxTenTKND.Text = dataGridViewNguoiDung.SelectedRows[0].Cells[0].Value.ToString();
 				textBoxMatKhauND.Text = dataGridViewNguoiDung.SelectedRows[0].Cells[1].Value.ToString();
-				textBoxChucNang.Text = dataGridViewNguoiDung.SelectedRows[0].Cells[2].Value.ToString();
-				textBoxQuyen.Text = dataGridViewNguoiDung.SelectedRows[0].Cells[3].Value.ToString();
+				comboBoxChucnang.Text = dataGridViewNguoiDung.SelectedRows[0].Cells[2].Value.ToString();
 			}
 		}
 
@@ -47,7 +46,7 @@ namespace QuanLyBanDienThoai
 
 		private TaiKhoan LayThongTinControl()
 		{
-			TaiKhoan tk = new TaiKhoan(this.textBoxTenTKND.Text, this.textBoxMatKhauND.Text,this.textBoxChucNang.Text, this.textBoxQuyen.Text);
+			TaiKhoan tk = new TaiKhoan(this.textBoxTenTKND.Text, this.textBoxMatKhauND.Text,this.comboBoxChucnang.Text);
 			return tk;
 		}
 

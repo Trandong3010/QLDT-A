@@ -96,16 +96,11 @@ namespace DataAccess
 			QLPhanQuyen qlpq = new QLPhanQuyen();
 			return qlpq.PhanQuyenChucNang_Get();
 		}
-		public DataTable MenuPQ_Get()
-		{
-			QLPhanQuyen qlpq = new QLPhanQuyen();
-			return qlpq.MenuPhanQuyen();
-		}
-		public DataTable TenTaiKhoan()
-		{
-			QLPhanQuyen qlpq = new QLPhanQuyen();
-			return qlpq.TenTaiKhoan();
-		}
+		//public DataTable TenTaiKhoan()
+		//{
+		//	QLPhanQuyen qlpq = new QLPhanQuyen();
+		//	return qlpq.TenTaiKhoan();
+		//}
 
         public DataTable ThongTinMuaHang()
         {

@@ -19,47 +19,49 @@ namespace QuanLyBanDienThoai
 			InitializeComponent();
 			textBoxMatKhau.PasswordChar = '*';
 		}
+		public static string TenTaiKhoan = "";
+		public static bool Phanquyen;
+		public static bool Matkhau;
+		public static bool Nguoidung;
+		public static bool Dangxuat;
+		public static bool Hoadon;
+		public static bool Xemsanpham;
+		public static bool Baohanh;
+		public static bool Nhaphang;
+		public static bool Trahang;
+		public static bool Khachhang;
+		public static bool Mathang;
+		public static bool Nhanvien;
+		public static bool Banggia;
+		public static bool TKdoanhthu;
+		public static bool TKKhachhang;
+		public static bool TKMathang;
 		
 		FormQLCHBanDT QLCHDT = new FormQLCHBanDT();
 
 		TaiKhoan tk = new TaiKhoan();
-
+		QLPhanQuyen a = new QLPhanQuyen();
 		private void buttonDangNhap_Click(object sender, EventArgs e)
 		{
 
 			Login1();
 		}
-		//private void Login()
-		//{
-		//	FormQLCHBanDT qldt = new FormQLCHBanDT();
-
-		//	string user = textBoxTenTK.Text;
-		//	string MK = textBoxMatKhau.Text;
-		//	if (textBoxTenTK.Text.Length == 0 || textBoxMatKhau.Text.Length == 0)
-		//	{
-		//		MessageBox.Show("Bạn chưa nhập tên hoặc mật khẩu");
-		//	}
-		//	else
-		//	{
-		//		int n = tk.DangNhap(user, MK).Rows.Count;
-		//		if (n!=0)
-		//		{
-		//			//tk.DangNhap(textBoxTenTK.Text, textBoxMatKhau.Text).ToString();
-		//			//MessageBox.Show("Bạn đã đăng nhập thành công!");
-		//			this.Hide();
-		//			qldt.ShowDialog();
-		//			this.Show();
-					
-		//		}
-		//		else
-		//			MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!");
-		//	}
-
-		//}
+		private bool PhanQuyen(int col)
+		{
+			string user = textBoxTenTK.Text;
+			string MK = textBoxMatKhau.Text;
+			bool kiemtra = false;
+			for (int i = 0; i < tk.DangNhap(user, MK).Rows.Count; i++)
+			{
+				if (tk.DangNhap(user, MK).Rows[i][col].ToString() == "True")
+					return kiemtra = true;
+			}
+			return kiemtra;
+		}
 
 		private void Login1()
 		{
-			
+			FormQLCHBanDT qldt = new FormQLCHBanDT();
 			BaseFunctions<TaiKhoan> tk1 = new BaseFunctions<TaiKhoan>();
 			DataTable dt = tk1.ChucNang();
 			string user = textBoxTenTK.Text;
@@ -76,10 +78,23 @@ namespace QuanLyBanDienThoai
 					break;
 				case 1:
 					this.Hide();
-							FormQLCHBanDT qldt = new FormQLCHBanDT(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
-							qldt.ShowDialog();
-					
-					
+					TenTaiKhoan = tk.DangNhap(user, MK).Rows[0][1].ToString();
+					Phanquyen = PhanQuyen(4);
+					Matkhau = PhanQuyen(5);
+					Nguoidung = PhanQuyen(6);
+					Dangxuat = PhanQuyen(7);
+					Hoadon = PhanQuyen(8);
+					Xemsanpham = PhanQuyen(9);
+					Nhaphang = PhanQuyen(10);
+					Trahang = PhanQuyen(11);
+					Khachhang = PhanQuyen(12);
+					Mathang = PhanQuyen(13);
+					Nhanvien = PhanQuyen(14);
+					Banggia = PhanQuyen(15);
+					TKdoanhthu = PhanQuyen(16);
+					TKKhachhang = PhanQuyen(17);
+					TKMathang = PhanQuyen(18);
+					qldt.ShowDialog();			
 					this.Show();
 					break;
 			}

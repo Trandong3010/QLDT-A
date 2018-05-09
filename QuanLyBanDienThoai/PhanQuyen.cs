@@ -16,29 +16,31 @@ namespace QuanLyBanDienThoai
 		{
 			InitializeComponent();
 		}
-		BaseFunctions<Phanquyen> pq = new BaseFunctions<Phanquyen>();
-		private void LoadDL()
+
+		BaseFunctions<TaiKhoan> tk = new BaseFunctions<TaiKhoan>();
+
+		public void DataChucNang()
 		{
-			this.dataGridViewChucNang.DataSource = pq.PhanQuyen_Get();
-			this.dataGridViewMenuPQ.DataSource = pq.MenuPQ_Get();
-            TenTaiKhoan();
+			dataGridViewChucNang.DataSource = tk.PhanQuyen_Get(); 
+		}
+
+		private void dataGridViewChucNang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 
 		private void PhanQuyen_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'qLCuaHangDienThoaiDataSet.TaiKhoan' table. You can move, or remove it, as needed.
-			//this.taiKhoanTableAdapter.Fill(this.qLCuaHangDienThoaiDataSet.TaiKhoan);
-			dataGridViewChucNang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridViewMenuPQ.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			LoadDL();
+			DataChucNang();
 		}
 
-        private void TenTaiKhoan()
-        {
-            DataTable dt = pq.TenTaiKhoan();
-            comboBoxTaiKhoan.DataSource = dt;
-            comboBoxTaiKhoan.DisplayMember = "TenTaiKhoan";
-            comboBoxTaiKhoan.ValueMember = "TenTaiKhoan";
-        }
+		private void comboBoxTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			QLPhanQuyen a = new QLPhanQuyen();
+			DataTable dt = a.TenTaiKhoan();
+			comboBoxTaiKhoan.DataSource = dt;
+			comboBoxTaiKhoan.DisplayMember = "TenTaiKhoan";
+			comboBoxTaiKhoan.ValueMember = "TenTaiKhoan";
+		}
 	}
 }

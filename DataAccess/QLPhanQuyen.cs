@@ -7,17 +7,13 @@ namespace DataAccess
 		KetNois qltk = new KetNois();
 		public DataTable PhanQuyenChucNang_Get()
 		{
-			return qltk.LayDuLieu("PhanQuyen_GetAll");
+			return qltk.LayDuLieu("Quyen_GetAll");
 		}
 
-		public DataTable MenuPhanQuyen()
-		{
-			return qltk.LayDuLieu("MenuPQ_GetAll");
-		}
 		//TaiKhoanUser
 		public DataTable TenTaiKhoan()
 		{
-            return qltk.LayDuLieu("TenTaiKhoan");
+            return qltk.LayDuLieu("TaiKhoanUser");
 		}
 	}
 }

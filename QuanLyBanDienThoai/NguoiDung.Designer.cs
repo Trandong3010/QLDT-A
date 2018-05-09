@@ -44,9 +44,7 @@ namespace QuanLyBanDienThoai
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBoxMatKhauND = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.textBoxQuyen = new System.Windows.Forms.TextBox();
-			this.textBoxChucNang = new System.Windows.Forms.TextBox();
+			this.comboBoxChucnang = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewNguoiDung)).BeginInit();
 			this.SuspendLayout();
@@ -196,36 +194,23 @@ namespace QuanLyBanDienThoai
 			this.label3.TabIndex = 4;
 			this.label3.Text = "Chức năng";
 			// 
-			// label4
+			// comboBoxChucnang
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(305, 134);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(38, 13);
-			this.label4.TabIndex = 4;
-			this.label4.Text = "Quyền";
-			// 
-			// textBoxQuyen
-			// 
-			this.textBoxQuyen.Location = new System.Drawing.Point(374, 131);
-			this.textBoxQuyen.Name = "textBoxQuyen";
-			this.textBoxQuyen.Size = new System.Drawing.Size(156, 20);
-			this.textBoxQuyen.TabIndex = 5;
-			// 
-			// textBoxChucNang
-			// 
-			this.textBoxChucNang.Location = new System.Drawing.Point(98, 131);
-			this.textBoxChucNang.Name = "textBoxChucNang";
-			this.textBoxChucNang.Size = new System.Drawing.Size(156, 20);
-			this.textBoxChucNang.TabIndex = 5;
+			this.comboBoxChucnang.FormattingEnabled = true;
+			this.comboBoxChucnang.Items.AddRange(new object[] {
+            "Quản lý",
+            "Nhân viên",
+            "Thủ kho"});
+			this.comboBoxChucnang.Location = new System.Drawing.Point(98, 131);
+			this.comboBoxChucnang.Name = "comboBoxChucnang";
+			this.comboBoxChucnang.Size = new System.Drawing.Size(156, 21);
+			this.comboBoxChucnang.TabIndex = 6;
 			// 
 			// NguoiDung
 			// 
 			this.ClientSize = new System.Drawing.Size(550, 516);
-			this.Controls.Add(this.textBoxChucNang);
-			this.Controls.Add(this.textBoxQuyen);
+			this.Controls.Add(this.comboBoxChucnang);
 			this.Controls.Add(this.textBoxMatKhauND);
-			this.Controls.Add(this.label4);
 			this.Controls.Add(this.textBoxTenTKND);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
@@ -266,8 +251,6 @@ namespace QuanLyBanDienThoai
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox textBoxMatKhauND;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBoxQuyen;
-		private System.Windows.Forms.TextBox textBoxChucNang;
+		private System.Windows.Forms.ComboBox comboBoxChucnang;
 	}
 }

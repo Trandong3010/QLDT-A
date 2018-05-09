@@ -35,7 +35,25 @@ namespace QuanLyBanDienThoai
 
 		private void FormQLCHBanDT_Load(object sender, EventArgs e)
 		{
-			CapQuyen(ChucNang);
+			//CapQuyen(ChucNang);
+			//FormDangNhap frmDN = new FormDangNhap();
+			//frmDN.ShowDialog();
+			if(FormDangNhap.Phanquyen) buttonItemPhanQuyen.Enabled = true; else buttonItemPhanQuyen.Enabled = false;
+			if(FormDangNhap.Matkhau) buttonItemMatKhau.Enabled = true; else buttonItemMatKhau.Enabled = false;
+			if(FormDangNhap.Nguoidung) buttonItemNguoiDung.Enabled = true; else buttonItemNguoiDung.Enabled = false;
+			if (FormDangNhap.Dangxuat) buttonItemDangXuat.Enabled = true; else buttonItemDangXuat.Enabled = false;
+			if (FormDangNhap.Hoadon) buttonItemHoaDon.Enabled = true; else buttonItemHoaDon.Enabled = false;
+			if (FormDangNhap.Xemsanpham) buttonItemXemSanPham.Enabled = true; else buttonItemXemSanPham.Enabled = false;
+			if (FormDangNhap.Baohanh) buttonItemBaoHanh.Enabled = true; else buttonItemBaoHanh.Enabled = false;
+			if (FormDangNhap.Nhaphang) buttonItemNhapHang.Enabled = true; else buttonItemNhapHang.Enabled = false;
+			if (FormDangNhap.Trahang) buttonItemTraHang.Enabled = true; else buttonItemTraHang.Enabled = false;
+			if (FormDangNhap.Khachhang) buttonItemKhachHang.Enabled = true; else buttonItemKhachHang.Enabled = false;
+			if (FormDangNhap.Mathang) buttonItemMatHang.Enabled = true; else buttonItemMatHang.Enabled = false;
+			if (FormDangNhap.Nhanvien) buttonItemThongTinNV.Enabled = true; else buttonItemThongTinNV.Enabled = false;
+			if (FormDangNhap.Banggia) buttonItemBangGia.Enabled = true; else buttonItemBangGia.Enabled = false;
+			if (FormDangNhap.TKdoanhthu) buttonItemThongKeDoanhThu.Enabled = true; else buttonItemThongKeDoanhThu.Enabled = false;
+			if (FormDangNhap.TKKhachhang) buttonItemThongKeKhachHang.Enabled = true; else buttonItemThongKeKhachHang.Enabled = false;
+			if (FormDangNhap.TKMathang) buttonItemThongKeMatHang.Enabled = true; else buttonItemThongKeMatHang.Enabled = false;
 		}
 
 		private void ribbonTabItemQuanLy_Click(object sender, EventArgs e)
