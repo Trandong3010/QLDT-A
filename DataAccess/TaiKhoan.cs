@@ -45,6 +45,28 @@ namespace DataAccess
 			this.TenTaiKhoan = tenTK;
 			this.MatKhau = matKhau;
 		}
+		public TaiKhoan(string tenTaiKhoan, string matKhau, string chucNang, bool phanquyen, bool mK, bool nguoidung, bool dangxuat, bool hoadon, bool xemsanpham, bool baohanh, bool nhaphang, bool trahang, bool khachhang, bool mathang, bool thongtinnhanvien, bool banggia, bool thongkedoanhthu, bool thongkekhachhang, bool thongkemathang)
+		{
+			this.TenTaiKhoan = tenTaiKhoan;
+			this.MatKhau = matKhau;
+			this.ChucNang = chucNang;
+			this.Phanquyen = phanquyen;
+			this.MK = mK;
+			this.Nguoidung = nguoidung;
+			this.Dangxuat = dangxuat;
+			this.Hoadon = hoadon;
+			this.Xemsanpham = xemsanpham;
+			this.Baohanh = baohanh;
+			this.Nhaphang = nhaphang;
+			this.Trahang = trahang;
+			this.Khachhang = khachhang;
+			this.Mathang = mathang;
+			this.Thongtinnhanvien = thongtinnhanvien;
+			this.Banggia = banggia;
+			this.Thongkedoanhthu = thongkedoanhthu;
+			this.Thongkekhachhang = Thongkekhachhang;
+			this.Thongkemathang = thongkemathang;
+		}
 
 
 		QLTaiKhoan tk = new QLTaiKhoan();
