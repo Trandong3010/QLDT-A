@@ -109,32 +109,10 @@ namespace QuanLyBanDienThoai
 			fr.ShowDialog();
 		}
 
-		private void tabControlMain_TabItemOpen(object sender, EventArgs e)
-		{
-			TabItem tabitem = tabControlMain.SelectedTab;
-			tabControlMain.Tabs.Add(tabitem);
-		}
 
 		private void buttonItemDangXuat_Click(object sender, EventArgs e)
 		{
 			Disable();
-		}
-
-		private void CapQuyen(string a)
-		{
-			switch (a)
-			{
-				case "Quản lý":
-					Admin();
-					break;
-				case "Nhân viên":
-					NhanVien();
-					break;
-				case "Thủ kho":
-					ThuKho();
-					break;
-
-			}
 		}
 
 		private void Disable()
@@ -166,100 +144,108 @@ namespace QuanLyBanDienThoai
 			buttonItemThongKeKhachHang.Enabled = false;
 			buttonItemThongKeMatHang.Enabled = false;
 		}
-		public void NhanVien()
+
+
+		private void buttonItemHoaDon_Click(object sender, EventArgs e)
 		{
-			ribbonTabItemHeThong.Enabled = true;
-			//----
-			buttonItemPhanQuyen.Enabled = false;
-			buttonItemMatKhau.Enabled = false;
-			buttonItemNguoiDung.Enabled = false;
-			buttonItemDangXuat.Enabled = true;
-			//-----
-			ribbonTabItemNghiepVu.Enabled = true;
-			//----
-			buttonItemHoaDon.Enabled = true;
-			buttonItemXemSanPham.Enabled = true;
-			buttonItemNhapHang.Enabled = false;
-			buttonItemBaoHanh.Enabled = true;
-			buttonItemTraHang.Enabled = false;
-			//----
-			ribbonTabItemDanhMuc.Enabled = false;
-			//----
-			buttonItemKhachHang.Enabled = false;
-			buttonItemMatHang.Enabled = false;
-			buttonItemThongTinNV.Enabled = false;
-			buttonItemBangGia.Enabled = false;
-			//----
-			ribbonTabItemBaoCao.Enabled = false;
-			buttonItemThongKeDoanhThu.Enabled = false;
-			buttonItemThongKeKhachHang.Enabled = false;
-			buttonItemThongKeMatHang.Enabled = false;
+
+			UCHoaDon uc = new UCHoaDon();
+			addtab("Hóa đơn", uc);
 		}
 
-		public void ThuKho()
+		private void addtab(string tabname, UserControl control)
 		{
-			ribbonTabItemHeThong.Enabled = true;
-			//----
-			buttonItemPhanQuyen.Enabled = false;
-			buttonItemMatKhau.Enabled = false;
-			buttonItemNguoiDung.Enabled = false;
-			buttonItemDangXuat.Enabled = true;
-			//-----
-			ribbonTabItemNghiepVu.Enabled = true;
-			//----
-			buttonItemHoaDon.Enabled = false;
-			buttonItemXemSanPham.Enabled = false;
-			buttonItemNhapHang.Enabled = true;
-			buttonItemBaoHanh.Enabled = false;
-			buttonItemTraHang.Enabled = true;
-			//----
-			ribbonTabItemDanhMuc.Enabled = false;
-			//----
-			buttonItemKhachHang.Enabled = false;
-			buttonItemMatHang.Enabled = false;
-			buttonItemThongTinNV.Enabled = false;
-			buttonItemBangGia.Enabled = false;
-			//----
-			ribbonTabItemBaoCao.Enabled = false;
-			buttonItemThongKeDoanhThu.Enabled = false;
-			buttonItemThongKeKhachHang.Enabled = false;
-			buttonItemThongKeMatHang.Enabled = false;
-		}
-		public void Admin()
-		{
-			ribbonTabItemHeThong.Enabled = true;
-			//----
-			buttonItemPhanQuyen.Enabled = true;
-			buttonItemMatKhau.Enabled = true;
-			buttonItemNguoiDung.Enabled = true;
-			buttonItemDangXuat.Enabled = true;
-			//-----
-			ribbonTabItemNghiepVu.Enabled = true;
-			//----
-			buttonItemHoaDon.Enabled = true;
-			buttonItemXemSanPham.Enabled = true;
-			buttonItemNhapHang.Enabled = true;
-			buttonItemBaoHanh.Enabled = true;
-			buttonItemTraHang.Enabled = true;
-			//----
-			ribbonTabItemDanhMuc.Enabled = true;
-			//----
-			buttonItemKhachHang.Enabled = true;
-			buttonItemMatHang.Enabled = true;
-			buttonItemThongTinNV.Enabled = true;
-			buttonItemBangGia.Enabled = true;
-			//----
-			ribbonTabItemBaoCao.Enabled = true;
-			buttonItemThongKeDoanhThu.Enabled = true;
-			buttonItemThongKeKhachHang.Enabled = true;
-			buttonItemThongKeMatHang.Enabled = true;
-		}
+			foreach (TabItem tabPage in tabControlMain.Tabs)
+				if (tabPage.Text == tabname)
+				{
+					tabControlMain.SelectedTab = tabPage;
+					return;
+				}
+			TabControlPanel newtabpannel = new DevComponents.DotNetBar.TabControlPanel();
+			TabItem newtab = new TabItem(this.components);
+			newtabpannel.Dock = System.Windows.Forms.DockStyle.Fill;
+			newtabpannel.Location = new System.Drawing.Point(0, 26);
+			newtabpannel.Name = tabname;
+			newtabpannel.Padding = new System.Windows.Forms.Padding(1);
+			newtabpannel.Size = new System.Drawing.Size(1230, 384);
+			newtabpannel.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+			newtabpannel.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+			newtabpannel.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			newtabpannel.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+			newtabpannel.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+										| DevComponents.DotNetBar.eBorderSide.Bottom)));
+			newtabpannel.Style.GradientAngle = 90;
+			newtabpannel.TabIndex = 2;
+			newtabpannel.TabItem = newtab;
+			Random ran = new Random();
+			newtab.Name = tabname + ran.Next(100000) + ran.Next(22342);
 
-		private void ribbonControl1_Click(object sender, EventArgs e)
-		{
+			newtab.AttachedControl = newtabpannel;
+			newtab.Text = tabname;
+			newtab.CloseButtonVisible = true;
+			control.Dock = DockStyle.Fill;
+			newtabpannel.Controls.Add(control);
+			tabControlMain.Controls.Add(newtabpannel);
+			tabControlMain.Tabs.Add(newtab);
+			tabControlMain.SelectedTab = newtab;
 
 		}
 
-		
+		private void buttonItemXemSanPham_Click(object sender, EventArgs e)
+		{
+			UCXemSanPham uc = new UCXemSanPham();
+			addtab("Xem thông tin sản phẩm", uc);
+		}
+
+		private void buttonItemBaoHanh_Click(object sender, EventArgs e)
+		{
+			UCPhieuBaoHanh uc = new UCPhieuBaoHanh();
+			addtab("Phiếu bảo hành", uc);
+		}
+
+		private void buttonItemNhapHang_Click(object sender, EventArgs e)
+		{
+			UCPhieuNhapHang uc = new UCPhieuNhapHang();
+			addtab("Phiếu nhập hàng", uc);
+		}
+
+		private void buttonItemTraHang_Click(object sender, EventArgs e)
+		{
+			UCPhieuTraHang uc = new UCPhieuTraHang();
+			addtab("Phiếu trả hàng", uc);
+		}
+
+		private void buttonItemMatHang_Click(object sender, EventArgs e)
+		{
+			UCHangHoa uc = new UCHangHoa();
+			addtab("Hàng hóa", uc);
+		}
+
+		private void buttonItemThongTinNV_Click(object sender, EventArgs e)
+		{
+			UCQLThongTinNhanVien uc = new UCQLThongTinNhanVien();
+			addtab("Quản lý thông tin nhân viên", uc);
+		}
+
+		private void buttonItemBangGia_Click(object sender, EventArgs e)
+		{
+			UCBangGia uc = new UCBangGia();
+			addtab("Bảng giá", uc);
+		}
+
+		private void buttonItemThongKeDoanhThu_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void buttonItemThongKeKhachHang_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void buttonItemThongKeMatHang_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

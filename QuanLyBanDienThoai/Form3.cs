@@ -79,12 +79,13 @@ namespace QuanLyBanDienThoai
 				case 1:
 					this.Hide();
 					TenTaiKhoan = tk.DangNhap(user, MK).Rows[0][1].ToString();
-					Phanquyen = PhanQuyen(4);
-					Matkhau = PhanQuyen(5);
-					Nguoidung = PhanQuyen(6);
-					Dangxuat = PhanQuyen(7);
-					Hoadon = PhanQuyen(8);
-					Xemsanpham = PhanQuyen(9);
+					Phanquyen = PhanQuyen(3);
+					Matkhau = PhanQuyen(4);
+					Nguoidung = PhanQuyen(5);
+					Dangxuat = PhanQuyen(6);
+					Hoadon = PhanQuyen(7);
+					Xemsanpham = PhanQuyen(8);
+					Baohanh = PhanQuyen(9);
 					Nhaphang = PhanQuyen(10);
 					Trahang = PhanQuyen(11);
 					Khachhang = PhanQuyen(12);
@@ -92,7 +93,7 @@ namespace QuanLyBanDienThoai
 					Nhanvien = PhanQuyen(14);
 					Banggia = PhanQuyen(15);
 					TKdoanhthu = PhanQuyen(16);
-					TKKhachhang = PhanQuyen(17);
+					TKKhachhang = PhanQuyen(16);
 					TKMathang = PhanQuyen(18);
 					qldt.ShowDialog();			
 					this.Show();
