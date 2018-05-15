@@ -284,3 +284,6 @@ D:\Code marter\Hoàn thiện\QLDT-master\QuanLyBanDienThoai\obj\Debug\QuanLyBanD
 D:\Code marter\Hoàn thiện\QLDT-master\QuanLyBanDienThoai\obj\Debug\QuanLyBanDienThoai.UCQLThongTinNhanVien.resources
 D:\Code marter\Hoàn thiện\QLDT-master\QuanLyBanDienThoai\obj\Debug\QuanLyBanDienThoai.UCXemSanPham.resources
 D:\Code marter\Hoàn thiện\QLDT-master\QuanLyBanDienThoai\obj\Debug\QuanLyBanDienThoai.csproj.GenerateResource.Cache
+D:\Code marter\Hoàn thiện\QLDT HoanThien\QuanLyBanDienThoai\bin\Debug\QuanLyBanDienThoai.exe.config
+D:\Code marter\Hoàn thiện\QLDT HoanThien\QuanLyBanDienThoai\obj\Debug\QuanLyBanDienThoai.exe
+D:\Code marter\Hoàn thiện\QLDT HoanThien\QuanLyBanDienThoai\obj\Debug\QuanLyBanDienThoai.pdb
