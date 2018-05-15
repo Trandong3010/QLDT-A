@@ -14,7 +14,50 @@ namespace QuanLyBanDienThoai
 	{
 		public FormTinhNang()
 		{
+            All = "";
 			InitializeComponent();
 		}
-	}
+        public string All { get; set; }
+
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            All = textBoxManHinh.Text + "," + textBoxHeDieuHanh.Text+"," + textBoxCPU.Text + "," + textBoxRAM.Text + "," + textBoxBoNhoTrong.Text + "," + textBoxDungLuongPin.Text;
+            MessageBox.Show("Đã thêm");
+            Close();
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+        public void Reset()
+        {
+            textBoxManHinh.Text = "";
+            textBoxHeDieuHanh.Text = "";
+            textBoxCPU.Text = "";
+            textBoxRAM.Text = "";
+            textBoxBoNhoTrong.Text = "";
+            textBoxDungLuongPin.Text = "";
+        }
+        public void DuaDuLieuLenForm(string a)
+        {
+            if (a.Length > 0)
+            {
+                string[] s = a.Split(',');
+                textBoxManHinh.Text = s[0];
+                textBoxHeDieuHanh.Text = s[1];
+                textBoxCPU.Text = s[2];
+                textBoxRAM.Text = s[3];
+                textBoxBoNhoTrong.Text = s[4];
+                textBoxDungLuongPin.Text = s[5];
+            }
+            else
+                Reset();
+        }
+    }
 }

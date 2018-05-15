@@ -10,7 +10,6 @@ namespace DataAccess
     {
         public int MaPhieuTra { get; set; }
         public int MaNV { get; set; }
-        public int TongSoLuong { get; set; }
         public DateTime NgayTra { get; set; }
         public string NhaCC { get; set; }
         public string DienThoaiNCC { get; set; }
@@ -22,11 +21,10 @@ namespace DataAccess
         {
 
         }
-        public TraHang(int maPhieuTra, int maNV, int tongSoLuong, DateTime ngayTra, string nhaCC, string dienThoaiNCC, string diaChiNhaCC)
+        public TraHang(int maPhieuTra, int maNV, DateTime ngayTra, string nhaCC, string dienThoaiNCC, string diaChiNhaCC)
         {
             this.MaPhieuTra = maPhieuTra;
             this.MaNV = maNV;
-            this.TongSoLuong = tongSoLuong;
             this.NgayTra = ngayTra;
             this.NhaCC = nhaCC;
             this.DienThoaiNCC = dienThoaiNCC;

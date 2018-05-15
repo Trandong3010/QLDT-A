@@ -31,19 +31,24 @@
 			this.components = new System.ComponentModel.Container();
 			this.tabControlXemThongTinSanPham = new DevComponents.DotNetBar.TabControl();
 			this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+			this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
 			this.tabItemDienThoaiNoiBatNhat = new DevComponents.DotNetBar.TabItem(this.components);
 			this.tabControlPanel9 = new DevComponents.DotNetBar.TabControlPanel();
 			this.tabItemTatCaDienThoai = new DevComponents.DotNetBar.TabItem(this.components);
-			this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
-			this.tabItemIphone = new DevComponents.DotNetBar.TabItem(this.components);
-			this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
-			this.tabItemSamsung = new DevComponents.DotNetBar.TabItem(this.components);
 			this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
 			this.tabItemOppo = new DevComponents.DotNetBar.TabItem(this.components);
 			this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
 			this.tabItemSony = new DevComponents.DotNetBar.TabItem(this.components);
+			this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+			this.tabItemSamsung = new DevComponents.DotNetBar.TabItem(this.components);
+			this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
+			this.tabItemIphone = new DevComponents.DotNetBar.TabItem(this.components);
+			this.pictureBoxhinh1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.tabControlXemThongTinSanPham)).BeginInit();
 			this.tabControlXemThongTinSanPham.SuspendLayout();
+			this.tabControlPanel4.SuspendLayout();
+			this.groupPanel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxhinh1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControlXemThongTinSanPham
@@ -69,9 +74,11 @@
 			this.tabControlXemThongTinSanPham.Tabs.Add(this.tabItemSamsung);
 			this.tabControlXemThongTinSanPham.Tabs.Add(this.tabItemSony);
 			this.tabControlXemThongTinSanPham.Tabs.Add(this.tabItemOppo);
+			this.tabControlXemThongTinSanPham.Click += new System.EventHandler(this.tabControlXemThongTinSanPham_Click);
 			// 
 			// tabControlPanel4
 			// 
+			this.tabControlPanel4.Controls.Add(this.groupPanel1);
 			this.tabControlPanel4.DisabledBackColor = System.Drawing.Color.Empty;
 			this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
@@ -87,6 +94,47 @@
 			this.tabControlPanel4.Style.GradientAngle = 90;
 			this.tabControlPanel4.TabIndex = 1;
 			this.tabControlPanel4.TabItem = this.tabItemDienThoaiNoiBatNhat;
+			this.tabControlPanel4.Click += new System.EventHandler(this.tabControlPanel4_Click);
+			// 
+			// groupPanel1
+			// 
+			this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+			this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+			this.groupPanel1.Controls.Add(this.pictureBoxhinh1);
+			this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
+			this.groupPanel1.Location = new System.Drawing.Point(36, 12);
+			this.groupPanel1.Name = "groupPanel1";
+			this.groupPanel1.Size = new System.Drawing.Size(784, 460);
+			// 
+			// 
+			// 
+			this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+			this.groupPanel1.Style.BackColorGradientAngle = 90;
+			this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+			this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+			this.groupPanel1.Style.BorderBottomWidth = 1;
+			this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+			this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+			this.groupPanel1.Style.BorderLeftWidth = 1;
+			this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+			this.groupPanel1.Style.BorderRightWidth = 1;
+			this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+			this.groupPanel1.Style.BorderTopWidth = 1;
+			this.groupPanel1.Style.CornerDiameter = 4;
+			this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+			this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+			this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+			this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+			// 
+			// 
+			// 
+			this.groupPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			// 
+			// 
+			// 
+			this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.groupPanel1.TabIndex = 0;
+			this.groupPanel1.Text = "groupPanel1";
 			// 
 			// tabItemDienThoaiNoiBatNhat
 			// 
@@ -117,54 +165,6 @@
 			this.tabItemTatCaDienThoai.AttachedControl = this.tabControlPanel9;
 			this.tabItemTatCaDienThoai.Name = "tabItemTatCaDienThoai";
 			this.tabItemTatCaDienThoai.Text = "Tất cả điện thoại";
-			// 
-			// tabControlPanel7
-			// 
-			this.tabControlPanel7.DisabledBackColor = System.Drawing.Color.Empty;
-			this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControlPanel7.Location = new System.Drawing.Point(0, 26);
-			this.tabControlPanel7.Name = "tabControlPanel7";
-			this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
-			this.tabControlPanel7.Size = new System.Drawing.Size(849, 509);
-			this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-			this.tabControlPanel7.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-			this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.tabControlPanel7.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-			this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-			this.tabControlPanel7.Style.GradientAngle = 90;
-			this.tabControlPanel7.TabIndex = 13;
-			this.tabControlPanel7.TabItem = this.tabItemIphone;
-			// 
-			// tabItemIphone
-			// 
-			this.tabItemIphone.AttachedControl = this.tabControlPanel7;
-			this.tabItemIphone.Name = "tabItemIphone";
-			this.tabItemIphone.Text = "Iphone";
-			// 
-			// tabControlPanel5
-			// 
-			this.tabControlPanel5.DisabledBackColor = System.Drawing.Color.Empty;
-			this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
-			this.tabControlPanel5.Name = "tabControlPanel5";
-			this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
-			this.tabControlPanel5.Size = new System.Drawing.Size(849, 509);
-			this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-			this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-			this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-			this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-			this.tabControlPanel5.Style.GradientAngle = 90;
-			this.tabControlPanel5.TabIndex = 5;
-			this.tabControlPanel5.TabItem = this.tabItemSamsung;
-			// 
-			// tabItemSamsung
-			// 
-			this.tabItemSamsung.AttachedControl = this.tabControlPanel5;
-			this.tabItemSamsung.Name = "tabItemSamsung";
-			this.tabItemSamsung.Text = "Sam sung";
 			// 
 			// tabControlPanel8
 			// 
@@ -214,6 +214,62 @@
 			this.tabItemSony.Name = "tabItemSony";
 			this.tabItemSony.Text = "Sony";
 			// 
+			// tabControlPanel5
+			// 
+			this.tabControlPanel5.DisabledBackColor = System.Drawing.Color.Empty;
+			this.tabControlPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
+			this.tabControlPanel5.Name = "tabControlPanel5";
+			this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
+			this.tabControlPanel5.Size = new System.Drawing.Size(849, 509);
+			this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+			this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+			this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+			this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+			this.tabControlPanel5.Style.GradientAngle = 90;
+			this.tabControlPanel5.TabIndex = 5;
+			this.tabControlPanel5.TabItem = this.tabItemSamsung;
+			// 
+			// tabItemSamsung
+			// 
+			this.tabItemSamsung.AttachedControl = this.tabControlPanel5;
+			this.tabItemSamsung.Name = "tabItemSamsung";
+			this.tabItemSamsung.Text = "Sam sung";
+			// 
+			// tabControlPanel7
+			// 
+			this.tabControlPanel7.DisabledBackColor = System.Drawing.Color.Empty;
+			this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControlPanel7.Location = new System.Drawing.Point(0, 26);
+			this.tabControlPanel7.Name = "tabControlPanel7";
+			this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
+			this.tabControlPanel7.Size = new System.Drawing.Size(849, 509);
+			this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+			this.tabControlPanel7.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+			this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.tabControlPanel7.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+			this.tabControlPanel7.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+			this.tabControlPanel7.Style.GradientAngle = 90;
+			this.tabControlPanel7.TabIndex = 13;
+			this.tabControlPanel7.TabItem = this.tabItemIphone;
+			// 
+			// tabItemIphone
+			// 
+			this.tabItemIphone.AttachedControl = this.tabControlPanel7;
+			this.tabItemIphone.Name = "tabItemIphone";
+			this.tabItemIphone.Text = "Iphone";
+			// 
+			// pictureBoxhinh1
+			// 
+			this.pictureBoxhinh1.Location = new System.Drawing.Point(49, 21);
+			this.pictureBoxhinh1.Name = "pictureBoxhinh1";
+			this.pictureBoxhinh1.Size = new System.Drawing.Size(133, 153);
+			this.pictureBoxhinh1.TabIndex = 0;
+			this.pictureBoxhinh1.TabStop = false;
+			// 
 			// UCXemSanPham
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,8 +278,12 @@
 			this.DoubleBuffered = true;
 			this.Name = "UCXemSanPham";
 			this.Size = new System.Drawing.Size(849, 535);
+			this.Load += new System.EventHandler(this.UCXemSanPham_Load);
 			((System.ComponentModel.ISupportInitialize)(this.tabControlXemThongTinSanPham)).EndInit();
 			this.tabControlXemThongTinSanPham.ResumeLayout(false);
+			this.tabControlPanel4.ResumeLayout(false);
+			this.groupPanel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxhinh1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -243,5 +303,7 @@
 		private DevComponents.DotNetBar.TabItem tabItemOppo;
 		private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
 		private DevComponents.DotNetBar.TabItem tabItemSony;
+		private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+		private System.Windows.Forms.PictureBox pictureBoxhinh1;
 	}
 }

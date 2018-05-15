@@ -75,12 +75,6 @@
     <Compile Include="FormTinhNang.Designer.cs">
       <DependentUpon>FormTinhNang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Loai.Designer.cs">
-      <DependentUpon>Loai.cs</DependentUpon>
-    </Compile>
     <Compile Include="NguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTinhNang.resx">
       <DependentUpon>FormTinhNang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Loai.resx">
-      <DependentUpon>Loai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NguoiDung.resx">
       <DependentUpon>NguoiDung.cs</DependentUpon>

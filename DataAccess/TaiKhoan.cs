@@ -70,7 +70,7 @@ namespace DataAccess
 
 
 		QLTaiKhoan tk = new QLTaiKhoan();
-		private string text;
+		//private string text;
 
 		public DataTable DangNhap(String TK, String MK)
 		{

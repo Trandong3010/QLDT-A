@@ -19,7 +19,9 @@ namespace QuanLyBanDienThoai
 			InitializeComponent();
 			textBoxMatKhau.PasswordChar = '*';
 		}
+		public static bool IsClose = false;
 		public static string TenTaiKhoan = "";
+		public string Mataikhoan { get; set; }
 		public static bool Phanquyen;
 		public static bool Matkhau;
 		public static bool Nguoidung;
@@ -95,7 +97,9 @@ namespace QuanLyBanDienThoai
 					TKdoanhthu = PhanQuyen(16);
 					TKKhachhang = PhanQuyen(16);
 					TKMathang = PhanQuyen(18);
-					qldt.ShowDialog();			
+					textBoxMatKhau.Text = "";
+					TenTaiKhoan = tk.DangNhap(user, MK).Rows[0][0].ToString();
+					qldt.ShowDialog();
 					this.Show();
 					break;
 			}

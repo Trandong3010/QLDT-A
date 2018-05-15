@@ -99,7 +99,7 @@ namespace QuanLyBanDienThoai
 				checkBoxBanggia.Checked = bool.Parse(dataGridViewChucNang.SelectedRows[0].Cells[15].Value.ToString());
 				checkBoxThongkedoanhthu.Checked = bool.Parse(dataGridViewChucNang.SelectedRows[0].Cells[16].Value.ToString());
 				checkBoxThongkekhachhang.Checked = bool.Parse(dataGridViewChucNang.SelectedRows[0].Cells[17].Value.ToString());
-				checkBoxThongkemathang.Checked = bool.Parse(dataGridViewChucNang.SelectedRows[0].Cells[18].Value.ToString());
+				//checkBoxThongkemathang.Checked = bool.Parse(dataGridViewChucNang.SelectedRows[0].Cells[18].Value.ToString());
 			}
 		}
 	}

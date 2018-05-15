@@ -12,14 +12,16 @@ namespace DataAccess
 		public int MaNV {get;set ;}
 		public int MaKH {get;set ;}
 		public string NgayLap {get;set ;}
-		public float TongTien {get;set ;}
 
 		public HoaDon()
 		{
 		}
-		public HoaDon(int soHoaDon, int maNV, int maKH, string ngayLap, float tongTien)
+		public HoaDon(int soHoaDon, int maNV, int maKH, string ngayLap)
 		{
 			SoHoaDon = soHoaDon;
+            MaNV = maNV;	
+            MaKH = maKH;
+            NgayLap = ngayLap;
 		}
 	}
 }

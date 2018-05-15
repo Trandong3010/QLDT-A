@@ -19,7 +19,7 @@ namespace QuanLyBanDienThoai
 		string MatKhau = "";
 		string ChucNang = "";
 		string Quyen = "";
-
+		public static string MaNV = "";
 		public FormQLCHBanDT()
 		{
 			InitializeComponent();
@@ -35,10 +35,9 @@ namespace QuanLyBanDienThoai
 
 		private void FormQLCHBanDT_Load(object sender, EventArgs e)
 		{
-			//CapQuyen(ChucNang);
-			//FormDangNhap frmDN = new FormDangNhap();
-			//frmDN.ShowDialog();
-			if(FormDangNhap.Phanquyen) buttonItemPhanQuyen.Enabled = true; else buttonItemPhanQuyen.Enabled = false;
+			DongTatCaCactab();
+			FormDangNhap frmDN = new FormDangNhap();
+			if (FormDangNhap.Phanquyen) buttonItemPhanQuyen.Enabled = true; else buttonItemPhanQuyen.Enabled = false;
 			if(FormDangNhap.Matkhau) buttonItemMatKhau.Enabled = true; else buttonItemMatKhau.Enabled = false;
 			if(FormDangNhap.Nguoidung) buttonItemNguoiDung.Enabled = true; else buttonItemNguoiDung.Enabled = false;
 			if (FormDangNhap.Dangxuat) buttonItemDangXuat.Enabled = true; else buttonItemDangXuat.Enabled = false;
@@ -54,6 +53,8 @@ namespace QuanLyBanDienThoai
 			if (FormDangNhap.TKdoanhthu) buttonItemThongKeDoanhThu.Enabled = true; else buttonItemThongKeDoanhThu.Enabled = false;
 			if (FormDangNhap.TKKhachhang) buttonItemThongKeKhachHang.Enabled = true; else buttonItemThongKeKhachHang.Enabled = false;
 			if (FormDangNhap.TKMathang) buttonItemThongKeMatHang.Enabled = true; else buttonItemThongKeMatHang.Enabled = false;
+
+			toolStripStatusLabelDangNhap.Text = FormDangNhap.TenTaiKhoan + " đang sử dụng phần mềm";
 		}
 
 		private void ribbonTabItemQuanLy_Click(object sender, EventArgs e)
@@ -244,6 +245,21 @@ namespace QuanLyBanDienThoai
 		}
 
 		private void buttonItemThongKeMatHang_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void DongTatCaCactab()
+		{
+			int index = tabControlMain.SelectedTabIndex;
+			for (int i = tabControlMain.Tabs.Count-1; i >= 0; i--)
+			{
+				tabControlMain.Tabs.RemoveAt(i);
+				tabControlMain.Refresh();
+			}
+		}
+
+		private void ucXemSanPham1_Load(object sender, EventArgs e)
 		{
 
 		}

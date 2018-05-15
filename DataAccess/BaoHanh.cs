@@ -9,22 +9,21 @@ namespace DataAccess
     public class BaoHanh
     {
         public int SoPhieu { get; set; }
-        public string TenHH { get; set; }
+        public int MaHH { get; set; }
         public string SoEmei { get; set; }
-        public string TenKH { get; set; }
+        public int MaKH { get; set; }
         public DateTime NgayMua { get; set; }
         public string ThoiGianBaoHanh { get; set; }
 
         public BaoHanh()
         {
-
         }
-        public BaoHanh(int soPhieu, string tenHH,string soEmei,string tenKH, DateTime ngayMua, string thoiGianBaoHanh)
+        public BaoHanh(int soPhieu, int maHH, string soEmei, int maKH, DateTime ngayMua, string thoiGianBaoHanh)
         {
             this.SoPhieu = soPhieu;
-            this.TenHH = tenHH;
+            this.MaHH = maHH;
             this.SoEmei = soEmei;
-            this.TenHH = tenKH;
+            this.MaKH = maKH;
             this.NgayMua = ngayMua;
             this.ThoiGianBaoHanh = thoiGianBaoHanh;
         }

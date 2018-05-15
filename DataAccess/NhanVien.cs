@@ -17,13 +17,13 @@ namespace DataAccess
 		public string Mail {get;set;}
 		public string CMND { get; set; }
 		public string Hinh {get;set; }
-		public bool TinhTrang {get;set; }
+		public string TinhTrang {get;set; }
 		public string TenTaiKhoan {get;set; }
 
 		public NhanVien()
 		{
 		}
-		public NhanVien(int maNV, string tenNV, bool gioiTinh, DateTime ngaySinh, string sDT, string diaChi, string mail, string cMND, string hinh, string tenTaiKhoan)
+		public NhanVien(int maNV, string tenNV, bool gioiTinh, DateTime ngaySinh, string sDT, string diaChi, string mail, string cMND, string hinh,string tinhtrang, string tenTaiKhoan)
 		{
 			MaNV = maNV;
 			TenNV = tenNV;
@@ -34,6 +34,7 @@ namespace DataAccess
 			Mail = mail;
 			CMND = cMND;
 			Hinh = hinh;
+            TinhTrang = tinhtrang;
 			TenTaiKhoan = TenTaiKhoan;
 
 		}

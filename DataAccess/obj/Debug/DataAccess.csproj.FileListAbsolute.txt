@@ -68,3 +68,10 @@ D:\Code marter\QLDT-master\QLDT-master\DataAccess\bin\Debug\Core.pdb
 D:\Code marter\QLDT-master\QLDT-master\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\Code marter\QLDT-master\QLDT-master\DataAccess\obj\Debug\DataAccess.dll
 D:\Code marter\QLDT-master\QLDT-master\DataAccess\obj\Debug\DataAccess.pdb
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\bin\Debug\DataAccess.dll
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\bin\Debug\DataAccess.pdb
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\bin\Debug\Core.dll
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\bin\Debug\Core.pdb
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\obj\Debug\DataAccess.dll
+D:\Code marter\Hoàn thiện\QLDT-master\DataAccess\obj\Debug\DataAccess.pdb

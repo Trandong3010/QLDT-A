@@ -49,10 +49,12 @@ namespace DataAccess
             return CBO.FillCollection<T>(DataProvider.Instance.ExecuteReader(this.GetTypeT() + "_SelectPage", From, To));
         }
 
-		public int InsertUpdateDelete(T obj)
-		{
-            return DataProvider.Instance.ExecuteNonQuery(this.GetTypeT() + "_Insert", this.GetInsertUpdateValues(obj).ToArray());
-		}
+		public int Insert(T obj, String output)
+        {
+            object rs = DataProvider.Instance.ExecuteNonQueryWithOutput(output, this.GetTypeT() + "_Insert", this.GetInsertUpdateValues(obj).ToArray());
+            int identity = rs != null ? Convert.ToInt32(rs) : 0;
+            return identity;     
+        }
 
 		public int Add(T obj)
         {
@@ -71,9 +73,9 @@ namespace DataAccess
             return DataProvider.Instance.ExecuteNonQuery(this.GetTypeT() + "_Delete", ID);
         }
 
-        public List<T> SelectBy(object item, string Name)
+        public List<T> SelectByMA(object Colum, object ID)
         {
-            return CBO.FillCollection<T>(DataProvider.Instance.ExecuteReader(this.GetTypeT() + "_SelectBy_" + Name, item));
+            return CBO.FillCollection<T>(DataProvider.Instance.ExecuteReader("SelectByMa", this.GetTypeT(), Colum, ID));
         }
 
         public List<T> SelectByID(object Colum,object ID)
@@ -96,23 +98,6 @@ namespace DataAccess
 			QLPhanQuyen qlpq = new QLPhanQuyen();
 			return qlpq.PhanQuyenChucNang_Get();
 		}
-		//public DataTable TenTaiKhoan()
-		//{
-		//	QLPhanQuyen qlpq = new QLPhanQuyen();
-		//	return qlpq.TenTaiKhoan();
-		//}
-
-        public DataTable ThongTinMuaHang()
-        {
-            KetNois a = new KetNois();
-            return a.LayDuLieu("ThongTinMuaHang");
-        }
-        public DataTable ThongTinHangHoaHoaDon()
-        {
-            KetNois a = new KetNois();
-            return a.LayDuLieu("LayHH_HoaDon");
-        }
-
 		public DataTable LayMatKhau()
 		{
 			KetNois a = new KetNois();
@@ -131,7 +116,31 @@ namespace DataAccess
 			return a.LayDuLieu("TaiKhoan_GetAll");
 		}
 
-		public DataTable ListToDataTable(List<T> data)
+		public DataTable ThongTinMuaHang()
+        {
+            KetNois a = new KetNois();
+            return a.LayDuLieu("ThongTinMuaHang");
+        }
+        public DataTable ThongTinHangHoaHoaDon()
+        {
+            KetNois a = new KetNois();
+            return a.LayDuLieu("LayHH_HoaDon");
+        }
+
+		public DataTable XemSanPham()
+		{
+			KetNois a = new KetNois();
+			return a.LayDuLieu("HienThiSanPham_GetAll");
+		}
+        public int CapNhatSoLuongHH(object s,object a)
+        {
+            return DataProvider.Instance.ExecuteNonQuery(this.GetTypeT() + "_SoLuong", s,a);
+        }
+        public int CapNhatThemSoLuong(object s, object a)
+        {
+            return DataProvider.Instance.ExecuteNonQuery(this.GetTypeT() + "_ThemSoLuong", s, a);
+        }
+        public DataTable ListToDataTable(List<T> data)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
             PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);

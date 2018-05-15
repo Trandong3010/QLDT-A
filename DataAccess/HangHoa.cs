@@ -32,6 +32,10 @@ namespace DataAccess
             this.Hinh = hinh;
             this.TinhNang = tinhNang;
         }
+		public HangHoa(string hinh)
+		{
+			this.Hinh = hinh;
+		}
 
 		public override string ToString()
 		{
